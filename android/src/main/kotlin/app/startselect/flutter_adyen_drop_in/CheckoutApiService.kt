@@ -6,7 +6,7 @@
  * Created by caiof on 11/2/2019.
  */
 
-package app.startselect.flutter_adyen
+package app.startselect.flutter_adyen_drop_in
 
 import com.adyen.checkout.base.model.paymentmethods.InputDetail
 import com.adyen.checkout.base.model.payments.request.*

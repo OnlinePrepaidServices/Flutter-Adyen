@@ -1,5 +1,5 @@
-name: flutter_adyen_example
-description: Demonstrates how to use the flutter_adyen plugin.
+name: flutter_adyen_drop_in_example
+description: Demonstrates how to use the flutter_adyen_drop_in plugin.
 publish_to: 'none'
 
 environment:
@@ -17,7 +17,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_adyen:
+  flutter_adyen_drop_in:
     path: ../
 
 # For information on the generic Dart part of this file, see the

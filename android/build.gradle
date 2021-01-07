@@ -1,4 +1,4 @@
-group 'app.startselect.flutter_adyen'
+group 'app.startselect.flutter_adyen_drop_in'
 version '1.0-SNAPSHOT'
 
 buildscript {

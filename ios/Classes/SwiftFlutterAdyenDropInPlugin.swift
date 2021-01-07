@@ -4,11 +4,11 @@ import Adyen
 import Adyen3DS2
 import Foundation
 
-public class SwiftFlutterAdyenPlugin: NSObject, FlutterPlugin {
+public class SwiftFlutterAdyenDropInPlugin: NSObject, FlutterPlugin {
     
     public static func register(with registrar: FlutterPluginRegistrar) {
-        let channel = FlutterMethodChannel(name: "flutter_adyen", binaryMessenger: registrar.messenger())
-        let instance = SwiftFlutterAdyenPlugin()
+        let channel = FlutterMethodChannel(name: "flutter_adyen_drop_in", binaryMessenger: registrar.messenger())
+        let instance = SwiftFlutterAdyenDropInPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
     
@@ -66,7 +66,7 @@ public class SwiftFlutterAdyenPlugin: NSObject, FlutterPlugin {
     }
 }
 
-extension SwiftFlutterAdyenPlugin: DropInComponentDelegate {
+extension SwiftFlutterAdyenDropInPlugin: DropInComponentDelegate {
     
     public func didSubmit(_ data: PaymentComponentData, from component: DropInComponent) {
         guard let baseURL = baseURL, let url = URL(string: baseURL + "payments/") else { return }

@@ -27,10 +27,10 @@ flutter:
   plugin:
     platforms:
       android:
-        package: app.startselect.flutter_adyen
-        pluginClass: FlutterAdyenPlugin
+        package: app.startselect.flutter_adyen_drop_in
+        pluginClass: FlutterAdyenDropInPlugin
       ios:
-        pluginClass: FlutterAdyenPlugin
+        pluginClass: FlutterAdyenDropInPlugin
 
 
 

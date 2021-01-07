@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_adyen/flutter_adyen.dart';
+import 'package:flutter_adyen_drop_in/flutter_adyen_drop_in.dart';
 
 import 'mock_data.dart';
 

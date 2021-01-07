@@ -1,4 +1,4 @@
-# flutter_adyen
+# flutter_adyen_drop_in
 
 Note: This library is not official from Adyen.
 Note: This plugin is forked from the plugin "flutter_adyen"
@@ -54,7 +54,7 @@ And in the AndroidManifest.xml in your application tag add this service, this al
 <application ...>
     ...
     <service
-           android:name="app.startselect.flutter_adyen.MyDropInService"
+           android:name="app.startselect.flutter_adyen_drop_in.MyDropInService"
            android:permission="android.permission.BIND_JOB_SERVICE" />
 
 </application>

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="app.startselect.flutter_adyen_example">
+    package="app.startselect.flutter_adyen_drop_in_example">
 
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
          calls FlutterMain.startInitialization(this); in its onCreate method.
@@ -9,7 +9,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:icon="@mipmap/ic_launcher"
-        android:label="flutter_adyen_example">
+        android:label="flutter_adyen_drop_in_example">
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
@@ -32,7 +32,7 @@
         </activity>
 
         <service
-            android:name="app.startselect.flutter_adyen.MyDropInService"
+            android:name="app.startselect.flutter_adyen_drop_in.MyDropInService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 </manifest>

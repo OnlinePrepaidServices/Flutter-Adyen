@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 
 class FlutterAdyen {
-  static const MethodChannel _channel = const MethodChannel('flutter_adyen');
+  static const MethodChannel _channel = const MethodChannel('flutter_adyen_drop_in');
 
   static Future<String> openDropIn(
       {paymentMethods, baseUrl, authToken, iosReturnUrl, merchantAccount, publicKey, amount, currency = 'EUR', reference, shopperReference}) async {

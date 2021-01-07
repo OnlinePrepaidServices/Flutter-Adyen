@@ -1,4 +1,4 @@
-# flutter_adyen
+# flutter_adyen_drop_in
 
 Flutter plugin to integrate with the Android and iOS libraries of Adyen.
 

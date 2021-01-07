@@ -1,4 +1,4 @@
-package app.startselect.flutter_adyen_example
+package app.startselect.flutter_adyen_drop_in_example
 
 import android.os.Bundle
 

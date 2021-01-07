@@ -1,4 +1,4 @@
-package app.startselect.flutter_adyen
+package app.startselect.flutter_adyen_drop_in
 
 import android.app.Activity
 import android.content.Context
@@ -30,12 +30,12 @@ import java.io.IOException
 var result: Result? = null
 var mActivity: Activity? = null
 
-class FlutterAdyenPlugin(private val activity: Activity) : MethodCallHandler {
+class FlutterAdyenDropInPlugin(private val activity: Activity) : MethodCallHandler {
     companion object {
         @JvmStatic
         fun registerWith(registrar: Registrar) {
-            val channel = MethodChannel(registrar.messenger(), "flutter_adyen")
-            channel.setMethodCallHandler(FlutterAdyenPlugin(registrar.activity()))
+            val channel = MethodChannel(registrar.messenger(), "flutter_adyen_drop_in")
+            channel.setMethodCallHandler(FlutterAdyenDropInPlugin(registrar.activity()))
         }
     }
 
