@@ -99,55 +99,55 @@ extension SwiftFlutterAdyenDropInPlugin: DropInComponentDelegate {
     func finish(data: Data, component: DropInComponent) {
         let paymentResponseJson = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? Dictionary<String,Any>
         if ((paymentResponseJson) != nil) {
-            let action = paymentResponseJson?!["action"]
-            if(action != nil) {
-                let act = try? JSONDecoder().decode(Action.self, from: JSONSerialization.data(withJSONObject: action, options: .sortedKeys)) as! Action
-                if(act != nil){
-                    component.handle(act!)
-                }
-            } else {
-                let resultCode = try? paymentResponseJson!!["resultCode"] as! String
-                let success = resultCode == "Authorised" || resultCode == "Received" || resultCode == "Pending"
-                component.stopLoading()
-                if (success) {
-                    self.mResult!("SUCCESS")
-                    DispatchQueue.global(qos: .background).async {
-                        
-                        // Background Thread
-                        DispatchQueue.main.async {
-                            self.topController?.dismiss(animated: false, completion: nil)
-                        }
-                    }
-                } else {
-                    self.mResult!("Failed with result code \(resultCode)")
-                    DispatchQueue.global(qos: .background).async {
-                        
-                        // Background Thread
-                        
-                        DispatchQueue.main.async {
-                            self.topController?.dismiss(animated: false, completion: nil)
-                        }
-                    }
-                }
-            }
+//            let action = paymentResponseJson?!["action"]
+//            if(action != nil) {
+//                let act = try? JSONDecoder().decode(Action.self, from: JSONSerialization.data(withJSONObject: action, options: .sortedKeys)) as! Action
+//                if(act != nil){
+//                    component.handle(act!)
+//                }
+//            } else {
+//                let resultCode = try? paymentResponseJson!!["resultCode"] as! String
+//                let success = resultCode == "Authorised" || resultCode == "Received" || resultCode == "Pending"
+//                component.stopLoading()
+//                if (success) {
+//                    self.mResult!("SUCCESS")
+//                    DispatchQueue.global(qos: .background).async {
+//
+//                        // Background Thread
+//                        DispatchQueue.main.async {
+//                            self.topController?.dismiss(animated: false, completion: nil)
+//                        }
+//                    }
+//                } else {
+//                    self.mResult!("Failed with result code \(resultCode)")
+//                    DispatchQueue.global(qos: .background).async {
+//
+//                        // Background Thread
+//
+//                        DispatchQueue.main.async {
+//                            self.topController?.dismiss(animated: false, completion: nil)
+//                        }
+//                    }
+//                }
+//            }
         }
     }
     
     public func didProvide(_ data: ActionComponentData, from component: DropInComponent) {
-        guard let baseURL = baseURL, let url = URL(string: baseURL + "payments/details/") else { return }
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("\(authToken!)", forHTTPHeaderField: "Authorization")
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let json: Dictionary<String, Any> = ["details": data.details.dictionaryRepresentation,"paymentData": data.paymentData]
-        let jsonData = try? JSONSerialization.data(withJSONObject: json)
-        request.httpBody = jsonData
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if(data != nil) {
-                self.finish(data: data!, component: component)
-            }
-            }.resume()
+//        guard let baseURL = baseURL, let url = URL(string: baseURL + "payments/details/") else { return }
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "POST"
+//        request.setValue("\(authToken!)", forHTTPHeaderField: "Authorization")
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//
+//        let json: Dictionary<String, Any> = ["details": data.details.dictionaryRepresentation,"paymentData": data.paymentData]
+//        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+//        request.httpBody = jsonData
+//        URLSession.shared.dataTask(with: request) { data, response, error in
+//            if(data != nil) {
+//                self.finish(data: data!, component: component)
+//            }
+//            }.resume()
     }
     
     public func didFail(with error: Error, from component: DropInComponent) {

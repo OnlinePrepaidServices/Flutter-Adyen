@@ -1,6 +1,6 @@
 name: flutter_adyen_drop_in
 description: Flutter plugin to integrate with the Android and iOS libraries of Adyen.
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/OnlinePrepaidServices/Flutter-Adyen
 
 environment:
