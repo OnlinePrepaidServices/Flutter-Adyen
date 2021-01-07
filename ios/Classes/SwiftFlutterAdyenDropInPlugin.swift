@@ -77,11 +77,11 @@ extension SwiftFlutterAdyenDropInPlugin: DropInComponentDelegate {
         
         let amountAsDouble = Double(amount!)
         // prepare json data
-        let json: [String: Any] = ["paymentMethod": data.paymentMethod.dictionaryRepresentation,
-                                   "amount": ["currency":currency, "value":amountAsDouble],
+        let json: Dictionary<String, Any> = ["paymentMethod": data.paymentMethod.dictionaryRepresentation,
+                                   "amount": ["currency":currency ?? "EUR", "value":amountAsDouble ?? 0],
                                    "channel": "iOS",
-                                   "merchantAccount": merchantAccount,
-                                   "reference": reference,
+                                   "merchantAccount": merchantAccount ?? "",
+                                   "reference": reference ?? "",
                                    "returnUrl": returnUrl! + "://",
                                    "storePaymentMethod": false,
                                    "additionalData": ["allow3DS2":"false"]]
@@ -140,7 +140,7 @@ extension SwiftFlutterAdyenDropInPlugin: DropInComponentDelegate {
         request.setValue("\(authToken!)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let json: [String: Any] = ["details": data.details.dictionaryRepresentation,"paymentData": data.paymentData]
+        let json: Dictionary<String, Any> = ["details": data.details.dictionaryRepresentation,"paymentData": data.paymentData]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         request.httpBody = jsonData
         URLSession.shared.dataTask(with: request) { data, response, error in
